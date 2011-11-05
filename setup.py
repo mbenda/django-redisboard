@@ -1,7 +1,6 @@
 # -*- encoding: utf8 -*-
 from distutils.core import setup
 from distutils.util import convert_path
-from django_facebook import __version__, __maintainer__, __email__
 from fnmatch import fnmatchcase
 import os
 import os
