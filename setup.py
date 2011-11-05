@@ -46,7 +46,6 @@ def find_package_data(where='.', package='', exclude=standard_exclude,
     Note patterns use wildcards, or can be exact paths (including
     leading ``./``), and all searching is case-insensitive.
     """
-    
     out = {}
     stack = [(convert_path(where), '', package, only_in_packages)]
     while stack:
@@ -94,7 +93,7 @@ def find_package_data(where='.', package='', exclude=standard_exclude,
 
 
 excluded_directories = standard_exclude_directories + ['./requirements', './scripts']
-package_data = find_package_data(exclude_directories=excluded_directories)
+package_data = find_package_data(where='src', exclude_directories=excluded_directories)
 
 setup(
     name = "django-redisboard",
@@ -106,10 +105,11 @@ setup(
     long_description = file(os.path.join(os.path.dirname(__file__), 'README.rst')).read(),
     author = 'Ionel Cristian Mărieș',
     author_email = 'contact@ionelmc.ro',
-    packages=find_packages(where='src'),
+    packages=find_packages('src'),
+    package_dir = {'':'src'},
     package_data=package_data,
-    data_files=[('', ['LICENSE.txt',
-                      'README.rest'])],
+    data_files=[('', ['LICENSE',
+                      'README.rst'])],
     zip_safe = False,
     classifiers = [
         'Development Status :: 4 - Beta',
