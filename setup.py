@@ -98,7 +98,7 @@ package_data = find_package_data(where='src', exclude_directories=excluded_direc
 setup(
     name = "django-redisboard",
     version = "0.2",
-    url = 'https://github.com/ionelmc/django-redisboard',
+    url = 'https://github.com/mbenda/django-redisboard',
     download_url = '',
     license = 'BSD',
     description = "Brief redis monitoring in django admin",
